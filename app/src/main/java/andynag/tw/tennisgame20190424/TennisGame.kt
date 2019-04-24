@@ -3,7 +3,8 @@ package andynag.tw.tennisgame20190424
 class TennisGame {
 
     enum class ScoreMapping(val result: String) {
-        zero("Love")
+        ZERO("Love"),
+        ONE("Fifteen")
     }
 
     var player2Score = 0
@@ -14,7 +15,10 @@ class TennisGame {
             return "Fifteen/Love"
         } else if(player1Score == 2 && player2Score == 0) {
             return "Thirty/Love"
-
+        } else if (player1Score == 3 && player2Score == 0) {
+            return "Forty/Love"
+        } else if (player1Score == 4 && player2Score == 0) {
+            return "Foo win"
         }
         return "Love all"
     }
