@@ -2,11 +2,6 @@ package andynag.tw.tennisgame20190424
 
 class TennisGame {
 
-    enum class ScoreMapping(val result: String) {
-        ZERO("Love"),
-        ONE("Fifteen")
-    }
-
     var player2Score = 0
     var player1Score = 0
 
@@ -20,11 +15,6 @@ class TennisGame {
     fun getGameResult(): String {
 
         if (isMatchPoint()) {
-//            return when(val abs = Math.abs(player1Score - player2Score)) {
-//               0 ->  "Deuce"
-//                1 ->  "advantage"
-//                2 - >
-//            }
 
             if (player2Score == player1Score) {
                 return "Deuce"
@@ -34,11 +24,12 @@ class TennisGame {
                 return "Foo win"
             }
 
-            if ((player1Score - player2Score) < 0) {
-                return "Advantage, Bar"
+            return if((player1Score - player2Score) < 0) {
+                 "Advantage, Bar"
             } else {
-                return "Advantage, Foo"
+                "Advantage, Foo"
             }
+
         }
 
         if(isDeuce()) {
@@ -54,8 +45,10 @@ class TennisGame {
             "${scoreMap[player1Score]}/${scoreMap[player2Score]}"
         }
 
+    }
 
-//        return "Love all"
+    private fun isPlay(){
+
     }
 
     private fun isDeuce(): Boolean {
