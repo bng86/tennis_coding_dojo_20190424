@@ -20,6 +20,12 @@ class TennisGame {
     fun getGameResult(): String {
 
         if (isMatchPoint()) {
+//            return when(val abs = Math.abs(player1Score - player2Score)) {
+//               0 ->  "Deuce"
+//                1 ->  "advantage"
+//                2 - >
+//            }
+
             if (player2Score == player1Score) {
                 return "Deuce"
             }
@@ -35,6 +41,12 @@ class TennisGame {
             }
         }
 
+        if(isDeuce()) {
+            return "Deuce"
+
+
+        }
+
 
         return if (player1Score == player2Score) {
             "${scoreMap[player1Score]} all"
@@ -46,8 +58,12 @@ class TennisGame {
 //        return "Love all"
     }
 
+    private fun isDeuce(): Boolean {
+        return (player1Score >=3 ||  player2Score >= 3) && player1Score == player2Score
+    }
+
     private fun isMatchPoint(): Boolean {
-        return player1Score > 3 || player2Score > 3
+        return (player1Score > 3 || player2Score > 3)
     }
 
 }
