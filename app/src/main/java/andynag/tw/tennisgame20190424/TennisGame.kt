@@ -10,32 +10,39 @@ class TennisGame {
     var player2Score = 0
     var player1Score = 0
 
+    private val scoreMap = mapOf(
+        0 to "Love",
+        1 to "Fifteen",
+        2 to "Thirty",
+        3 to "Forty"
+    )
+
     fun getGameResult(): String {
 
-        if(isMatchPoint()){
+
+
+        if (isMatchPoint()) {
+            if(player2Score == player1Score){
+                return "Deuce"
+            }
+
             if (player1Score == 4 && player2Score == 0) {
                 return "Foo win"
             }
         }
 
-        val scoreMap = mapOf<Int, String>(
-            0 to "Love",
-            1 to "Fifteen",
-            2 to "Thirty",
-            3 to "Forty"
-        )
 
-        if(player1Score == 1 && player2Score == 0) {
-            return "Fifteen/Love"
-        } else if(player1Score == 2 && player2Score == 0) {
-            return "Thirty/Love"
-        } else if (player1Score == 3 && player2Score == 0) {
-            return "Forty/Love"
+        return if (player1Score == player2Score) {
+            "${scoreMap[player1Score]} all"
+        } else {
+            "${scoreMap[player1Score]}/${scoreMap[player2Score]}"
         }
-        return "Love all"
+
+
+//        return "Love all"
     }
 
-    private fun isMatchPoint():Boolean{
+    private fun isMatchPoint(): Boolean {
         return player1Score >= 3 || player2Score >= 3
     }
 
