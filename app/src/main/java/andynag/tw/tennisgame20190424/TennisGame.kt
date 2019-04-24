@@ -19,15 +19,19 @@ class TennisGame {
 
     fun getGameResult(): String {
 
-
-
         if (isMatchPoint()) {
-            if(player2Score == player1Score){
+            if (player2Score == player1Score) {
                 return "Deuce"
             }
 
             if (player1Score == 4 && player2Score == 0) {
                 return "Foo win"
+            }
+
+            if ((player1Score - player2Score) < 0) {
+                return "Advantage, Bar"
+            } else {
+                return "Advantage, Foo"
             }
         }
 

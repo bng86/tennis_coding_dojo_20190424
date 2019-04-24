@@ -91,10 +91,31 @@ class TennisGameTest {
         assertEquals("Deuce", actual)
     }
 
+    @Test
+    fun `test 4-4 then return Foo Win`() {
+        val target = TennisGame()
+        target.player1Score = 4
+        target.player2Score = 4
+        val actual = target.getGameResult()
+        assertEquals("Deuce", actual)
+    }
 
+    @Test
+    fun `test 4-5 then return Advantage, Bar`() {
+        val target = TennisGame()
+        target.player1Score = 4
+        target.player2Score = 5
+        val actual = target.getGameResult()
+        assertEquals("Advantage, Bar", actual)
+    }
 
-
-
-
+    @Test
+    fun `test 5-4 then return Advantage, Foo`() {
+        val target = TennisGame()
+        target.player1Score = 5
+        target.player2Score = 4
+        val actual = target.getGameResult()
+        assertEquals("Advantage, Foo", actual)
+    }
 
 }
