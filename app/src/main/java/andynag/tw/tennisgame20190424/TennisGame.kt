@@ -12,19 +12,31 @@ class TennisGame {
 
     fun getGameResult(): String {
 
+        if(isMatchPoint()){
+            if (player1Score == 4 && player2Score == 0) {
+                return "Foo win"
+            }
+        }
+
+        val scoreMap = mapOf<Int, String>(
+            0 to "Love",
+            1 to "Fifteen",
+            2 to "Thirty",
+            3 to "Forty"
+        )
+
         if(player1Score == 1 && player2Score == 0) {
             return "Fifteen/Love"
         } else if(player1Score == 2 && player2Score == 0) {
             return "Thirty/Love"
         } else if (player1Score == 3 && player2Score == 0) {
             return "Forty/Love"
-        } else if (player1Score == 4 && player2Score == 0) {
-            return "Foo win"
         }
         return "Love all"
     }
-    private  fun isThree():Boolean{
-        return player1Score<3 || player2Score>3
+
+    private fun isMatchPoint():Boolean{
+        return player1Score >= 3 || player2Score >= 3
     }
 
 }
