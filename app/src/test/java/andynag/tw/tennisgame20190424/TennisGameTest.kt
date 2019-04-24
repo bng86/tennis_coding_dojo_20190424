@@ -125,4 +125,13 @@ class TennisGameTest {
         val actual = target.getGameResult()
         assertEquals("Foo win", actual)
     }
+
+    @Test
+    fun `test 4-6 then return Bar win`() {
+        val target = TennisGame()
+        target.player1Score = 4
+        target.player2Score = 6
+        val actual = target.getGameResult()
+        assertEquals("Bar win", actual)
+    }
 }

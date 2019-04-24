@@ -16,26 +16,26 @@ class TennisGame {
 
         if (isMatchPoint()) {
 
-            if (player2Score == player1Score) {
+            if (isDeuce()) {
                 return "Deuce"
             }
-
-            if (player1Score == 4 && player2Score == 0) {
+            if (isPlay1Win()) {
                 return "Foo win"
+            } else if (isPlay2Win()) {
+                return "Bar win"
+
             }
 
-            return if((player1Score - player2Score) < 0) {
-                 "Advantage, Bar"
+            return if ((player1Score - player2Score) < 0) {
+                "Advantage, Bar"
             } else {
                 "Advantage, Foo"
             }
 
         }
 
-        if(isDeuce()) {
+        if (isDeuce()) {
             return "Deuce"
-
-
         }
 
 
@@ -47,12 +47,16 @@ class TennisGame {
 
     }
 
-    private fun isPlay(){
+    private fun isPlay1Win(): Boolean {
+        return player1Score - player2Score >= 2
+    }
 
+    private fun isPlay2Win(): Boolean {
+        return player2Score - player1Score >= 2
     }
 
     private fun isDeuce(): Boolean {
-        return (player1Score >=3 ||  player2Score >= 3) && player1Score == player2Score
+        return (player1Score >= 3 || player2Score >= 3) && player1Score == player2Score
     }
 
     private fun isMatchPoint(): Boolean {
