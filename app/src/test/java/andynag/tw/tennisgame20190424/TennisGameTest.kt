@@ -15,9 +15,22 @@ class TennisGameTest {
     @Test
     fun `test 1-0 then return Fifteen Love`() {
         val target = TennisGame()
+        target.player1Score = 1
+        target.player2Score = 0
         val actual = target.getGameResult()
-        target.setPlayer1Score(1)
-        target.setPlayer2Score(0)
+
+
         assertEquals("Fifteen/Love", actual)
+    }
+
+    @Test
+    fun `test 2-0 then return Thirty Love`() {
+        val target = TennisGame()
+        target.player1Score = 2
+        target.player2Score = 0
+        val actual = target.getGameResult()
+
+
+        assertEquals("Thirty/Love", actual)
     }
 }
