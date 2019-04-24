@@ -11,6 +11,7 @@ class TennisGame {
     var player1Score = 0
 
     fun getGameResult(): String {
+
         if(player1Score == 1 && player2Score == 0) {
             return "Fifteen/Love"
         } else if(player1Score == 2 && player2Score == 0) {
@@ -21,6 +22,9 @@ class TennisGame {
             return "Foo win"
         }
         return "Love all"
+    }
+    private  fun isThree():Boolean{
+        return player1Score<3 || player2Score>3
     }
 
 }
