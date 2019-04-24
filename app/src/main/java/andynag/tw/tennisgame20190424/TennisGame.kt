@@ -47,7 +47,7 @@ class TennisGame {
     }
 
     private fun isMatchPoint(): Boolean {
-        return player1Score >= 3 || player2Score >= 3
+        return player1Score > 3 || player2Score > 3
     }
 
 }

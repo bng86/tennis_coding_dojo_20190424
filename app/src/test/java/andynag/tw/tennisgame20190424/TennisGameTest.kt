@@ -54,7 +54,7 @@ class TennisGameTest {
 
 
     @Test
-    fun `test 0-1 then return Foo Win`() {
+    fun `test 0-1 then return Love Fifteen`() {
         val target = TennisGame()
         target.player1Score = 0
         target.player2Score = 1
@@ -64,7 +64,7 @@ class TennisGameTest {
 
 
     @Test
-    fun `test 1-1 then return Foo Win`() {
+    fun `test 1-1 then return Fifteen all`() {
         val target = TennisGame()
         target.player1Score = 1
         target.player2Score = 1
@@ -73,7 +73,7 @@ class TennisGameTest {
     }
 
     @Test
-    fun `test 2-2 then return Foo Win`() {
+    fun `test 2-2 then return Thirty all`() {
         val target = TennisGame()
         target.player1Score = 2
         target.player2Score = 2
@@ -83,7 +83,7 @@ class TennisGameTest {
 
 
     @Test
-    fun `test 3-3 then return Foo Win`() {
+    fun `test 3-3 then return Deuce`() {
         val target = TennisGame()
         target.player1Score = 3
         target.player2Score = 3
@@ -92,7 +92,7 @@ class TennisGameTest {
     }
 
     @Test
-    fun `test 4-4 then return Foo Win`() {
+    fun `test 4-4 then return Deuce`() {
         val target = TennisGame()
         target.player1Score = 4
         target.player2Score = 4
